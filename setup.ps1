@@ -22,15 +22,15 @@ Write-Host "Configuring System..." -ForegroundColor "Yellow"
 
 # --------------------------- setup repos directory -------------------------- #
 Write-Host "Setting up repos directory..." -ForegroundColor "Green"
-$reposDir = "$env:USERPROFILE/source/repos"
+$reposDir = "$env:USERPROFILE\source\repos"
 if (!(Test-Path )) {
     New-Item -ItemType Directory -Force -Path $reposDir
 }
 
 # ----------------------------- install programs ----------------------------- #
 Write-Host "Installing programs..." -ForegroundColor "Green"
-Invoke-Expression "./winget-package-install.ps1"
+Invoke-Expression ".\winget-package-install.ps1"
 
 # ----------------------------- setup dotfiles ------------------------------ #
 Write-Host "Setting up dotfiles..." -ForegroundColor "Green"
-Invoke-Expression "./dotfiles-setup.ps1"
+Start-Process powershell -ArgumentList "-File `".\dotfiles-setup.ps1`""
