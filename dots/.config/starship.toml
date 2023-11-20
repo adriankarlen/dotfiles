@@ -1,0 +1,87 @@
+# Sets user-defined palette
+palette = "rose-pine"
+
+# Pure Preset
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$python\
+$character"""
+
+[directory]
+style = "iris"
+
+[character]
+success_symbol = "[❯](gold)"
+error_symbol = "[❯](love)"
+vimcmd_symbol = "[❮](pine)"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "higlight-med"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "foam"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "highlight-med"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "gold"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "highlight-med"
+# End Pure Preset
+
+# No Nerd Font Fix
+[battery]
+full_symbol = "• "
+charging_symbol = "⇡ "
+discharging_symbol = "⇣ "
+unknown_symbol = "❓ "
+empty_symbol = "❗ "
+
+[erlang]
+symbol = "ⓔ "
+
+[nodejs]
+symbol = "[⬢](bold pine) "
+
+[pulumi]
+symbol = "🧊 "
+# End No Nerd Font Fix
+
+[palettes.rose-pine]
+
+base = "#191724"
+surface = "#1f1d2e"
+overlay = "#26233a"
+muted = "#6e6a86"
+subtle = "#908caa"
+text = "#e0def4"
+love = "#eb6f92"
+gold = "#f6c177"
+rose = "#ebbcba"
+pine = "#31748f"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+highlight-low = "#21202e"
+highlight-med = "#403d52"
+highlight-high = "#524f67"
