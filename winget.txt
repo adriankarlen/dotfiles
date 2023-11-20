@@ -1,0 +1,12 @@
+CoreyButler.NVMforWindows
+Flow-Launcher.Flow-Launcher
+Insomnia.Insomnia
+Logitech.GHUB
+Microsoft.AzureDataStudio
+Microsoft.PowerToys
+Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
+Microsoft.WindowsTerminal
+Obisidian.Obisidian
+Spicetify.Spicetify
+Spotify.Spotify
+Starship.Starship
