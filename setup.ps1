@@ -30,3 +30,7 @@ if (!(Test-Path )) {
 # ----------------------------- install programs ----------------------------- #
 Write-Host "Installing programs..." -ForegroundColor "Green"
 Invoke-Expression "./winget-package-install.ps1"
+
+# ----------------------------- setup dotfiles ------------------------------ #
+Write-Host "Setting up dotfiles..." -ForegroundColor "Green"
+Invoke-Expression "./dotfiles-setup.ps1"
