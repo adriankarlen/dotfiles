@@ -61,3 +61,7 @@ Invoke-Expression ".\winget-package-install.ps1"
 # ------------------------------ setup settings ------------------------------ #
 Write-Host "Setting up dotfiles..." -ForegroundColor "Green"
 Start-Process powershell -ArgumentList "-File `".\settings-setup.ps1`""
+
+# ------------------------------ clone git repos ----------------------------- #
+Write-Host "Cloning git repos..." -ForegroundColor "Green"
+Invoke-Expression ".\git-clone.ps1"
