@@ -11,7 +11,7 @@ foreach ($repo in $repos) {
 
     if (!(Test-Path -Path $repoPath)) {
         Write-Host "Cloning $repoName..." -ForegroundColor "Green"
-        # git clone $repo $repoPath
+        git clone $repo $repoPath
     }
     else {
         Write-Host "$repoName already exists." -ForegroundColor "Red"
