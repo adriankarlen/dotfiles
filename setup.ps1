@@ -11,6 +11,14 @@ function Confirm-Elevated {
     return $myPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
+function Confirm-GitInstalled {
+    $32BitPrograms = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*
+    $64BitPrograms = Get-ItemProperty     HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*
+    $programsWithGitInName = ($32BitPrograms + $64BitPrograms) | Where-Object { $null -ne $_.DisplayName -and $_.Displayname.Contains('Git') }
+    $isGitInstalled = $null -ne $programsWithGitInName
+    return $isGitInstalled
+}
+
 # -------- check to see if we are currently running "as Administrator" ------- #
 if (!(Confirm-Elevated)) {
     $newProcess = new-object System.Diagnostics.ProcessStartInfo "PowerShell";
@@ -22,7 +30,7 @@ if (!(Confirm-Elevated)) {
 }
 
 # -------------------- check to see that git is installed -------------------- #
-if (!(Test-Path "C:\Program Files\Git\cmd\git-cmd.exe")) {
+if (!(Confirm-GitInstalled)) {
     Write-Host "Git is not installed. Please install git and try again." -ForegroundColor "Red"
     exit
 }
