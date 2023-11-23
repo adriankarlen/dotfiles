@@ -11,12 +11,22 @@ function Confirm-Elevated {
     return $myPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
-function Confirm-GitInstalled {
-    $32BitPrograms = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*
-    $64BitPrograms = Get-ItemProperty     HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*
-    $programsWithGitInName = ($32BitPrograms + $64BitPrograms) | Where-Object { $null -ne $_.DisplayName -and $_.Displayname.Contains('Git') }
-    $isGitInstalled = $null -ne $programsWithGitInName
-    return $isGitInstalled
+function Test-CommandExists {
+    param ($command)
+    $oldPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'stop'
+
+    try { 
+        if (Get-Command $command) { 
+            "$command exists" 
+        } 
+    }
+    catch { 
+        "$command does not exist" 
+    }
+    finally { 
+        $ErrorActionPreference = $oldPreference 
+    }
 }
 
 # -------- check to see if we are currently running "as Administrator" ------- #
@@ -30,7 +40,7 @@ if (!(Confirm-Elevated)) {
 }
 
 # -------------------- check to see that git is installed -------------------- #
-if (!(Confirm-GitInstalled)) {
+if (!(Test-CommandExists "git")) {
     Write-Host "Git is not installed. Please install git and try again." -ForegroundColor "Red"
     exit
 }
