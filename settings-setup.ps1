@@ -14,7 +14,7 @@ spicetify apply
 
 # --------------------------------- Starship --------------------------------- #
 # Copy file if it doesn't exist in the destination
-$sourceFilePath = ".dots\starship\starship.toml"
+$sourceFilePath = ".\dots\starship\starship.toml"
 $destinationFilePath = "$env:USERPROFILE\.config\starship.toml"
 if (!(Test-Path -Path $destinationFilePath)) {
     Copy-Item -Path $sourceFilePath -Destination $destinationFilePath
@@ -22,4 +22,4 @@ if (!(Test-Path -Path $destinationFilePath)) {
 
 # ----------------------------- Windows Terminal ----------------------------- #
 $windowsTerminalConfigPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-Copy-Item -Path ".dots\windows terminal\settings.json" -Destination $windowsTerminalConfigPath -Force
+Copy-Item -Path ".\dots\windows terminal\settings.json" -Destination $windowsTerminalConfigPath -Force
