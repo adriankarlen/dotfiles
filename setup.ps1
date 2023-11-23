@@ -50,7 +50,7 @@ Write-Host "Configuring System..." -ForegroundColor "Yellow"
 # --------------------------- setup repos directory -------------------------- #
 Write-Host "Setting up repos directory..." -ForegroundColor "Green"
 $reposDir = "$env:USERPROFILE\source\repos"
-if (!(Test-Path )) {
+if (!(Test-Path -Path $reposDir)) {
     New-Item -ItemType Directory -Force -Path $reposDir
 }
 
