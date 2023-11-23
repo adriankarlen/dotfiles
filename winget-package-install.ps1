@@ -34,6 +34,6 @@ Finally {
     Write-Host "winget is installed." -ForegroundColor "Green"
     # Start installing the packages with winget
     Get-Content .\winget.txt | ForEach-Object {
-        iex ("winget install -e " + $_)
+        Invoke-Expression ("winget install -e " + $_)
     }
 }
