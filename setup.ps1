@@ -48,10 +48,6 @@ if (!(Test-Path )) {
 Write-Host "Installing programs..." -ForegroundColor "Green"
 Invoke-Expression ".\winget-package-install.ps1"
 
-# ----------------------------- setup windows ------------------------------- #
-Write-Host "Setting up windows..." -ForegroundColor "Green"
-Invoke-Expression ".\windows.ps1"
-
-# ----------------------------- setup dotfiles ------------------------------ #
+# ------------------------------ setup settings ------------------------------ #
 Write-Host "Setting up dotfiles..." -ForegroundColor "Green"
-Start-Process powershell -ArgumentList "-File `".\dotfiles-setup.ps1`""
+Start-Process powershell -ArgumentList "-File `".\settings-setup.ps1`""
