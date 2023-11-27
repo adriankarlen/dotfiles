@@ -3,6 +3,11 @@ Flow-Launcher.Flow-Launcher
 Insomnia.Insomnia
 Logitech.GHUB
 Microsoft.AzureDataStudio
+Microsoft.DotNet.Framework.DeveloperPack_4 -v 4.6.2
+Microsoft.DotNet.Runtime.6
+Microsoft.DotNet.Runtime.7
+Microsoft.DotNet.SDK.6
+Microsoft.DotNet.SDK.7
 Microsoft.PowerToys
 Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 Microsoft.WindowsTerminal
