@@ -28,3 +28,6 @@ Copy-Item -Path ".\dots\windows terminal\settings.json" -Destination $windowsTer
 nvm install lts
 nvm install 16.20.2
 nvm use lts
+
+# ---------------------------- Gloabl NPM packages --------------------------- #
+npm install -g pnpm
