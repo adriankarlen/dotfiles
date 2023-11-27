@@ -23,3 +23,8 @@ if (!(Test-Path -Path $destinationFilePath)) {
 # ----------------------------- Windows Terminal ----------------------------- #
 $windowsTerminalConfigPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 Copy-Item -Path ".\dots\windows terminal\settings.json" -Destination $windowsTerminalConfigPath -Force
+
+# ------------------------------------ NVM ----------------------------------- #
+nvm install lts
+nvm install 16.20.2
+nvm use lts
