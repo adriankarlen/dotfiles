@@ -11,6 +11,7 @@ Microsoft.DotNet.SDK.7
 Microsoft.PowerToys
 Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 Microsoft.WindowsTerminal
+Mozilla.Firefox
 Obisidian.Obisidian
 Spicetify.Spicetify
 Spotify.Spotify
