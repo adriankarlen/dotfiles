@@ -12,7 +12,4 @@ cd dotfiles-win
 
 ## 🍚 Preview
 
-<details>
-    <summary></summary>
-    <img src="https://raw.githubusercontent.com/adriankarlen/dotfiles-win/main/assets/preview.png"/>
-</details>
+<img src="assets/preview.png"/>
