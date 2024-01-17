@@ -35,7 +35,6 @@ if (!(Confirm-Elevated)) {
     $newProcess.Arguments = $myInvocation.MyCommand.Definition;
     $newProcess.Verb = "runas";
     [System.Diagnostics.Process]::Start($newProcess);
- 
     exit
 }
 
@@ -47,6 +46,10 @@ if (!(Test-CommandExists "git")) {
 
 Write-Host "Configuring System..." -ForegroundColor "Yellow"
 
+# ------------------------------ setup powershell ---------------------------- #
+Write-Host "Setting up powershell..." -ForegroundColor "Green"
+Set-Content -Path $profile -Value Get-Content ".\dots\.pwsh.ps1"
+
 # --------------------------- setup repos directory -------------------------- #
 Write-Host "Setting up repos directory..." -ForegroundColor "Green"
 $reposDir = "$env:USERPROFILE\source\repos"
@@ -54,13 +57,13 @@ if (!(Test-Path -Path $reposDir)) {
     New-Item -ItemType Directory -Force -Path $reposDir
 }
 
-# ----------------------------- install programs ----------------------------- #
-Write-Host "Installing programs..." -ForegroundColor "Green"
+# --------------------------- install applications --------------------------- #
+Write-Host "Installing applications..." -ForegroundColor "Green"
 Invoke-Expression ".\winget-package-install.ps1"
 
-# ------------------------------ setup settings ------------------------------ #
+# ---------------------------- setup applications ---------------------------- #
 Write-Host "Setting up dotfiles..." -ForegroundColor "Green"
-Start-Process powershell -ArgumentList "-File `".\settings-setup.ps1`""
+Start-Process powershell -ArgumentList "-File `".\applications-setup.ps1`""
 
 # ------------------------------ clone git repos ----------------------------- #
 Write-Host "Cloning git repos..." -ForegroundColor "Green"

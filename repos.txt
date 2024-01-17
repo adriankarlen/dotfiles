@@ -2,4 +2,4 @@ https://github.com/adriankarlen/_sushi.git
 https://github.com/adriankarlen/www.git
 https://github.com/adriankarlen/vscode-relapce.git
 https://github.com/adriankarlen/rp-userstyles.git
-https://github.com/microsoft/theme-converter-for-vs.git
+https://github.com/adriankarlen/yasb.git

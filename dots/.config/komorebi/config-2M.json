@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.json",
-    "app_specific_configuration_path": "__USERÅROFILE__/.config/komorebi/applications.yaml",
+    "app_specific_configuration_path": "__USERPROFILE__/.config/komorebi/applications.yaml",
     "window_hiding_behaviour": "Cloak",
     "alt_focus_hack": true,
     "active_window_border_width": 12,
@@ -14,28 +14,6 @@
     "monitors": [
         {
             "workspaces": [
-                {
-                    "name": "\uf38f",
-                    "layout": "BSP",
-                    "initial_workspace_rules": [
-                        {
-                            "kind": "Exe",
-                            "id": "vivaldi.exe"
-                        },
-                        {
-                            "kind": "Exe",
-                            "id": "firefox.exe"
-                        },
-                        {
-                            "kind": "Exe",
-                            "id": "chrome.exe"
-                        },
-                        {
-                            "kind": "Exe",
-                            "id": "microsoftedge.exe"
-                        }
-                    ]
-                },
                 {
                     "name": "\uea77",
                     "layout": "BSP",
@@ -63,9 +41,43 @@
                     ]
                 },
                 {
-                    "name": "\ueaef",
+                    "name": "\uebdc",
+                    "layout": "BSP"
+                }
+            ]
+        },
+        {
+            "workspaces": [
+                {
+                    "name": "\uf38f",
                     "layout": "BSP",
-                    "workspace_rules": [
+                    "initial_workspace_rules": [
+                        {
+                            "kind": "Exe",
+                            "id": "vivaldi.exe"
+                        },
+                        {
+                            "kind": "Exe",
+                            "id": "firefox.exe"
+                        },
+                        {
+                            "kind": "Exe",
+                            "id": "chrome.exe"
+                        },
+                        {
+                            "kind": "Exe",
+                            "id": "microsoftedge.exe"
+                        }
+                    ]
+                },
+                {
+                    "name": "\ueaef \ued03",
+                    "layout": "BSP",
+                    "initial_workspace_rules": [
+                        {
+                            "kind": "Exe",
+                            "id": "Spotify.exe"
+                        },
                         {
                             "kind": "Exe",
                             "id": "ms-teams.exe"
@@ -79,21 +91,6 @@
                             "id": "Slack.exe"
                         }
                     ]
-                },
-                {
-                    "name": "\ued03",
-                    "layout": "BSP",
-                    "workspace_rules": [
-                        {
-                            "kind": "Exe",
-                            "id": "Spotify.exe"
-                        }
-                    ]
-                },
-                {
-                    "name": "\uebdc",
-                    "layout": "BSP",
-                    "initial_workspace_rules": []
                 }
             ]
         }
