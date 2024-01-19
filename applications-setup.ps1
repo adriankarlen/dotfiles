@@ -28,13 +28,3 @@ nvm use lts
 
 # ---------------------------- Gloabl NPM packages --------------------------- #
 npm install -g pnpm
-
-# --------------------------------- komorebi --------------------------------- #
-$komorebiConfigDir = "$env:USERPROFILE\.config\komorebi"
-komorebic fetch-app-specific-configuration
-$komorebiAppConfig = "$env:USERPROFILE\applications.yaml"
-Copy-Item $komorebiAppConfig "$komorebiConfigDir\applications.yaml"
-$komorebiConfig = "$env:USERPROFILE\.config\komorebi\config.json"
-$komorebiConfig2M = "$env:USERPROFILE\.config\komorebi\config-2M.json"
-(Get-Content $komorebiConfig) | Foreach-Object { $_ -replace "__USERPROFILE__", "$env:USERPROFILE" } | Set-Content $komorebiConfig
-(Get-Content $komorebiConfig2M) | Foreach-Object { $_ -replace "__USERPROFILE__", "$env:USERPROFILE" } | Set-Content $komorebiConfig2M

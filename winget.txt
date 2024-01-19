@@ -1,3 +1,4 @@
+BurntSushi.ripgrep.MSVC
 CoreyButler.NVMforWindows
 eza-community.eza
 Flow-Launcher.Flow-Launcher

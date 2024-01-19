@@ -12,4 +12,5 @@ cd dotfiles-win
 
 ## 🍚 Preview
 
-<img src="assets/preview.png"/>
+<img src="assets/preview-1.png"/>
+<img src="assets/preview-2.png"/>

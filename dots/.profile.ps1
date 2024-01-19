@@ -5,15 +5,23 @@
 # ------------------------------ starship setup ------------------------------ #
 Invoke-Expression (&starship init powershell)
 
-# -------------------------------- git aliases ------------------------------- #
-Import-Module git-aliases -DisableNameChecking
-
-# ---------------------------------- styling --------------------------------- #
-$PSStyle.FileInfo.Directory = "`e[32m"
-
-# ---------------------------------- aliases --------------------------------- #
+# ------------------------------ genaral aliases ----------------------------- #
 function touch { Set-Content -Path ($args[0]) -Value ($null) } 
 function reload { . $PROFILE }
+function x { exit }
+
+# -------------------------------- git aliases ------------------------------- #
+function add { git add $args 
+    if ($args -eq $null) { git add . } 
+}
+function commit { git commit -m $args }
+function push { git push }
+function pull { git pull }
+function stat { git status }
+function gdiff { git diff HEAD }
+function vdiff { git difftool HEAD }
+function log { git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit }
+function lg { lazygit }
 
 # --------------------------------- komorebi --------------------------------- #
 $Env:KOMOREBI_CONFIG_HOME = 'Env:USERPROFILE\.config\komorebi'
@@ -22,6 +30,9 @@ function komo2mstart { komorebic start -c "$Env:USERPROFILE\.config\komorebi\con
 
 # ----------------------------------- yasb ----------------------------------- #
 function yasb { python "$ENV:USERPROFILE\source\repos\utility\yasb\src\main.py" }
+
+# ---------------------------------- glazewm --------------------------------- #
+function glaze { glazewm --config="$Env:USERPROFILE\.config\glazewm\config.yaml" }
 
 # ---------------------------- faster code launch ---------------------------- #
 function c { code . }
@@ -39,18 +50,18 @@ function god { Set-Location ~/Documents/ }
 function godl { Set-Location ~/Downloads/ }
 function gop { Set-Location ~/Pictures/ }
 function gov { Set-Location ~/Videos/ }
-function godev { Set-Location ~/source/repos/$args }
+function godev { Set-Location ~/source/repos/$args}
 
 # --------------------------- even faster movement --------------------------- #
 function go { Set-Location "$(find . -type d -print | fzf)" }
-function gfo { Set-Location "$(find ~ -type d -print | fzf)" }
+function gofo { Set-Location "$(find ~ -type d -print | fzf)" }
 
 # -------------------------------- eza aliases ------------------------------- #
 Remove-Item alias:ls -Force
-function ls { eza --color=always --group-directories-first }
-function la { eza --color=always --group-directories-first -a }
-function ll { eza --color=always --group-directories-first -la --no-time }
-function lt { eza --color=always --group-directories-first -T }
+function ls { eza --icons=always --color=always --group-directories-first }
+function la { eza --icons=always --color=always --group-directories-first -a }
+function ll { eza --icons=always --color=always --group-directories-first -la --no-time }
+function lt { eza --icons=always --color=always --group-directories-first -T }
 
 # ------------------------------------ lf ------------------------------------ #
 
