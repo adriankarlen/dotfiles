@@ -1,3 +1,6 @@
 [submodule "dots/nvim"]
 	path = dots/nvim
 	url = https://github.com/adriankarlen/nvim.git
+[submodule "dots/zebar"]
+	path = dots/zebar
+	url = https://github.com/adriankarlen/zebar.git
