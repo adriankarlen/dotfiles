@@ -2,6 +2,8 @@
 #                                my pwsh profile                               #
 # ---------------------------------------------------------------------------- #
 
+# ---------------------------------- paths ----------------------------------- #
+
 # ------------------------------ starship setup ------------------------------ #
 Invoke-Expression (&starship init powershell)
 
@@ -9,9 +11,28 @@ Invoke-Expression (&starship init powershell)
 function touch { Set-Content -Path ($args[0]) -Value ($null) } 
 function reload { . $PROFILE }
 function x { exit }
+function ipcopy { curl ifconfig.me | clip }
+function unzip {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true, Position = 0)]
+        [string]$ArchiveFileName,
+
+        [Parameter(Mandatory = $false, Position = 1)]
+        [string]$TargetPath
+    )
+
+    $targetPathParam = if ($TargetPath) { @{ TargetPath = $TargetPath } } else { @{} }
+
+    Expand-7Zip -ArchiveFileName $ArchiveFileName @targetPathParam
+}
+
+Register-ArgumentCompleter -CommandName 'touch' -ParameterName args -ScriptBlock ${function:TabComplete}
+Register-ArgumentCompleter -CommandName 'unzip'  -ParameterName args -ScriptBlock ${function:TabComplete}
 
 # -------------------------------- git aliases ------------------------------- #
-function add { git add $args 
+function add {
+    git add $args 
     if ($args -eq $null) { git add . } 
 }
 function commit { git commit -m $args }
@@ -24,44 +45,67 @@ function log { git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yello
 function lg { lazygit }
 
 # --------------------------------- komorebi --------------------------------- #
-$Env:KOMOREBI_CONFIG_HOME = 'Env:USERPROFILE\.config\komorebi'
-function komostart { komorebic start -c "$Env:USERPROFILE\.config\komorebi\config.json" --whkd }
-function komo2mstart { komorebic start -c "$Env:USERPROFILE\.config\komorebi\config-2M.json" --whkd }
+$env:KOMOREBI_CONFIG_HOME = "$env:USERPROFILE\.config\komorebi"
+function komostart { komorebic start -c "$env:USERPROFILE\.config\komorebi\config.json" --whkd }
+function komo2mstart { komorebic start -c "$env:USERPROFILE\.config\komorebi\config-2M.json" --whkd }
 
-# ----------------------------------- yasb ----------------------------------- #
-function yasb { python "$ENV:USERPROFILE\source\repos\utility\yasb\src\main.py" }
+# ----------------------------------- whkd ----------------------------------- #
+function whkd-restart { taskkill /f /im whkd.exe && Start-Process whkd -WindowStyle hidden }
 
 # ---------------------------------- glazewm --------------------------------- #
-function glaze { glazewm --config="$Env:USERPROFILE\.config\glazewm\config.yaml" }
+function glaze { glazewm --config="$env:USERPROFILE\.config\glazewm\config.yaml" }
+
+# ---------------------------------- spotify --------------------------------- #
+new-alias spt spotify_player
+
+# _-------------------------------- fzf setup -------------------------------- #
+$ENV:FZF_DEFAULT_OPTS=@"
+	--color=fg:#908caa,bg:#191724,hl:#ebbcba
+	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
+	--color=border:#403d52,header:#31748f,gutter:#191724
+	--color=spinner:#f6c177,info:#9ccfd8,separator:#403d52
+	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa
+"@
 
 # ---------------------------- faster code launch ---------------------------- #
 function c { code . }
+function n {
+  wezterm cli set-tab-title nvim;
+  nvim $args
+}
 
 # ------------------------------ faster movement ----------------------------- #
-function .. { Set-Location .. }
-function ..2 { Set-Location ../.. }
-function ..3 { Set-Location ../../.. }
-function ..4 { Set-Location ../../../.. }
-function ..5 { Set-Location ../../../../.. }
-function gor { Set-Location / }
-function goh { Set-Location ~ }
-function goc { Set-Location ~/.config/ }
-function god { Set-Location ~/Documents/ }
-function godl { Set-Location ~/Downloads/ }
-function gop { Set-Location ~/Pictures/ }
-function gov { Set-Location ~/Videos/ }
-function godev { Set-Location ~/source/repos/$args}
+function .. { Set-Location ../$args }
+function ..2 { Set-Location ../../$args }
+function ..3 { Set-Location ../../../$args }
+function ..4 { Set-Location ../../../../$args }
+function ..5 { Set-Location ../../../../../$args }
+function gor { Set-Location /$args }
+function goh { Set-Location ~/$args }
+function goc { Set-Location ~/.config/$args }
+function gon { Set-Location ~/AppData/Local/nvim }
+function godev { Set-Location ~/source/repos/$args }
+
+# Register the tab completion function for the movement commands
+# Register-ArgumentCompleter -CommandName '..'  -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName '..2' -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName '..3' -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName '..4' -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName '..5' -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName 'gor'  -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName 'goh'  -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName 'goc'  -ParameterName args -ScriptBlock ${function:TabComplete}
+# Register-ArgumentCompleter -CommandName 'godev'  -ParameterName args -ScriptBlock ${function:TabComplete}
 
 # --------------------------- even faster movement --------------------------- #
-function go { Set-Location "$(find . -type d -print | fzf)" }
-function gofo { Set-Location "$(find ~ -type d -print | fzf)" }
+function go { Set-Location (Get-Item $(fzf --query=$args)).Directory.FullName }
 
 # -------------------------------- eza aliases ------------------------------- #
 Remove-Item alias:ls -Force
-function ls { eza --icons=always --color=always --group-directories-first }
-function la { eza --icons=always --color=always --group-directories-first -a }
-function ll { eza --icons=always --color=always --group-directories-first -la --no-time }
-function lt { eza --icons=always --color=always --group-directories-first -T }
+function ls { eza --icons=always --color=always --group-directories-first $args }
+function la { eza --icons=always --color=always --group-directories-first -a $args }
+function ll { eza --icons=always --color=always --group-directories-first -la --no-time $args }
+function lt { eza --icons=always --color=always --group-directories-first -T $args }
 
 # ------------------------------------ lf ------------------------------------ #
 
@@ -89,3 +133,57 @@ Register-ArgumentCompleter -Native -CommandName 'lf' -ScriptBlock {
         $completions.Where{ $_.CompletionText -like "$wordToComplete*" } | Sort-Object -Property ListItemText
     }
 }
+
+# ----------------------------- helper functions ----------------------------- #
+# TODO: FIX THIS FUNCTION (IT ALWAYS RETURNS AS IF )
+function TabComplete {
+    param (
+        $commandName,
+        $parameterName,
+        $wordToComplete,
+        $commandAst,
+        $fakeBoundParameter
+    )
+
+    # Determine the intended destination based on the command
+    switch ($commandName) {
+        '..' { $destination = '..' }
+        '..2' { $destination = '../..' }
+        '..3' { $destination = '../../..' }
+        '..4' { $destination = '../../../..' }
+        '..5' { $destination = '../../../../..' }
+        'gor' { $destination = '/' }
+        'goh' { $destination = '~' }
+        'goc' { $destination = '~/.config' }
+        'godev' { $destination = '~/source/repos' }
+        default { $destination = '' }
+    }
+
+    # Get the list of directories and files in the intended destination
+    $items = Get-ChildItem $destination
+
+
+    # Filter items based on the word to complete
+    $filteredItems = $items | Where-Object { $_.Name -like "$wordToComplete*" }
+
+    # Provide the filtered items for tab completion
+    $filteredItems | ForEach-Object {
+        $itemPath = $_.FullName.Substring($destination.Length + 1)
+        $itemPath
+    }
+}
+
+prompt = ""
+function Invoke-Starship-PreCommand {
+    $current_location = $executionContext.SessionState.Path.CurrentLocation
+    if ($current_location.Provider.Name -eq "FileSystem") {
+        $ansi_escape = [char]27
+        $provider_path = $current_location.ProviderPath -replace "\\", "/"
+        $prompt = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}$ansi_escape\"
+    }
+    $host.ui.Write($prompt)
+}
+
+Invoke-Expression (&starship init powershell)
+
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
