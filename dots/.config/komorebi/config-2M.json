@@ -1,0 +1,112 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.json",
+  "app_specific_configuration_path": "C:/Users/ADKA01/.config/komorebi/applications.yaml",
+  "window_hiding_behaviour": "Cloak",
+  "alt_focus_hack": true,
+  "default_workspace_padding": 40,
+  "active_window_border_width": 3,
+  "active_window_border_offset": -2,
+  "active_window_border": true,
+  "active_window_border_colours": {
+    "single": { "r": 196, "g": 167, "b": 231 },
+    "stack": { "r": 49, "g": 116, "b": 143 },
+    "monocle": { "r": 235, "g": 111, "b": 146 }
+  },
+  "float_rules": [
+    {
+      "kind": "Exe",
+      "id": "Zebar.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "code",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "Code.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "devenv.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "Rider64.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "WindowsTerminal.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "alacritty.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "Insomnia.exe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "browsing",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "vivaldi.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "firefox.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "chrome.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "microsoftedge.exe"
+            }
+          ]
+        },
+        {
+          "name": "chat",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "ms-teams.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "olk.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "Slack.exe"
+            }
+          ]
+        },
+        {
+          "name": "music",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "Spotify.exe"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

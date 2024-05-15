@@ -10,6 +10,7 @@ local palette = {
     base = '#191724',
     overlay = '#26233a',
     muted = '#6e6a86',
+    subtle = '#908caa',
     text = '#e0def4',
     love = '#eb6f92',
     gold = '#f6c177',
@@ -28,7 +29,7 @@ local active_tab = {
 
 local inactive_tab = {
     bg_color = palette.base,
-    fg_color = palette.muted,
+    fg_color = palette.subtle,
 }
 
 function M.colors()
@@ -40,7 +41,7 @@ function M.colors()
         cursor_fg = palette.text,
         selection_bg = palette.highlighy_med,
         selection_fg = palette.text,
-
+        split = palette.rose,
         ansi = {
             palette.overlay,
             palette.love,
