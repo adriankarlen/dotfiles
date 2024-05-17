@@ -53,9 +53,6 @@ function whkd-restart { taskkill /f /im whkd.exe && Start-Process whkd -WindowSt
 # ---------------------------------- glazewm --------------------------------- #
 function glaze { glazewm --config="$env:USERPROFILE\.config\glazewm\config.yaml" }
 
-# ---------------------------------- spotify --------------------------------- #
-new-alias spt spotify_player
-
 # _-------------------------------- fzf setup -------------------------------- #
 $ENV:FZF_DEFAULT_OPTS=@"
 	--color=fg:#908caa,bg:#191724,hl:#ebbcba
@@ -73,16 +70,15 @@ function n {
 }
 
 # ------------------------------ faster movement ----------------------------- #
-function .. { Set-Location ../$args }
-function ..2 { Set-Location ../../$args }
-function ..3 { Set-Location ../../../$args }
-function ..4 { Set-Location ../../../../$args }
-function ..5 { Set-Location ../../../../../$args }
-function gor { Set-Location /$args }
-function goh { Set-Location ~/$args }
-function goc { Set-Location ~/.config/$args }
-function gon { Set-Location ~/AppData/Local/nvim }
-function godev { Set-Location ~/source/repos/$args }
+function .. { z ../$args }
+function ..2 { z ../../$args }
+function ..3 { z ../../../$args }
+function ..4 { z ../../../../$args }
+function ..5 { z ../../../../../$args }
+function gor { z /$args }
+function goc { z ~/.config/$args }
+function gon { z ~/AppData/Local/nvim }
+function godev { z ~/source/repos/$args }
 
 # Register the tab completion function for the movement commands
 # Register-ArgumentCompleter -CommandName '..'  -ParameterName args -ScriptBlock ${function:TabComplete}
@@ -96,7 +92,7 @@ function godev { Set-Location ~/source/repos/$args }
 # Register-ArgumentCompleter -CommandName 'godev'  -ParameterName args -ScriptBlock ${function:TabComplete}
 
 # --------------------------- even faster movement --------------------------- #
-function go { Set-Location (Get-Item $(fzf --query=$args)).Directory.FullName }
+function go { z (Get-Item $(fzf --query=$args)).Directory.FullName }
 
 # -------------------------------- eza aliases ------------------------------- #
 Remove-Item alias:ls -Force
