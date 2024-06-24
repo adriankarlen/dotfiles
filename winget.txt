@@ -1,24 +1,8 @@
-BurntSushi.ripgrep.MSVC
-CoreyButler.NVMforWindows
-eza-community.eza
-Flow-Launcher.Flow-Launcher
-Insomnia.Insomnia
-junegunn.fzf
-LGUG2Z.komorebi
-LGUG2Z.whkd
 Logitech.GHUB
-Microsoft.AzureDataStudio
 Microsoft.DotNet.Framework.DeveloperPack_4 -v 4.6.2
 Microsoft.DotNet.Runtime.6
 Microsoft.DotNet.Runtime.7
+Microsoft.DotNet.Runtime.8
 Microsoft.DotNet.SDK.6
 Microsoft.DotNet.SDK.7
-Microsoft.PowerToys
-Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
-Microsoft.WindowsTerminal
-Mozilla.Firefox
-Obisidian.Obisidian
-Spicetify.Spicetify
-Spotify.Spotify
-Starship.Starship
-wez.wezterm
+Microsoft.DotNet.SDK.8

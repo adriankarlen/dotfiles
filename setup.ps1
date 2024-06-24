@@ -60,6 +60,7 @@ if (!(Test-Path -Path $reposDir)) {
 # --------------------------- install applications --------------------------- #
 Write-Host "Installing applications..." -ForegroundColor "Green"
 Invoke-Expression ".\winget-package-install.ps1"
+scoop install ".\scoop.json"
 
 # ---------------------------- setup applications ---------------------------- #
 Write-Host "Setting up dotfiles..." -ForegroundColor "Green"

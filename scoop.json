@@ -1,0 +1,303 @@
+{
+  "apps": [
+    {
+      "Name": "7zip",
+      "Version": "24.06",
+      "Updated": "2024-06-05T09:44:34.65821+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "alacritty",
+      "Version": "0.13.2",
+      "Updated": "2024-05-01T08:44:25.1497485+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "conemu",
+      "Version": "23.07.24",
+      "Updated": "2024-02-27T21:49:05.7336336+01:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "dark",
+      "Version": "3.14",
+      "Updated": "2024-03-04T11:04:46.2946919+01:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "discord",
+      "Version": "1.0.9035-18",
+      "Updated": "2024-05-01T08:44:59.6187617+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "eza",
+      "Version": "0.18.17",
+      "Updated": "2024-06-10T07:37:36.8376537+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "fd",
+      "Version": "10.1.0",
+      "Updated": "2024-05-13T08:40:23.6888943+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "firefox",
+      "Version": "127.0.1",
+      "Updated": "2024-06-10T07:37:28.0560374+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "fontforge",
+      "Version": "20230101",
+      "Updated": "2024-03-20T14:56:32.4142201+01:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "fzf",
+      "Version": "0.53.0",
+      "Updated": "2024-06-10T07:37:33.2539407+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "gh",
+      "Version": "2.51.0",
+      "Updated": "2024-06-19T09:31:06.4891649+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "innounp",
+      "Version": "0.50",
+      "Updated": "2024-03-20T14:56:16.8665224+01:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "jq",
+      "Version": "1.7.1",
+      "Updated": "2024-06-04T15:13:24.9791587+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "komorebi",
+      "Version": "0.1.22",
+      "Updated": "2024-03-18T09:47:55.8832242+01:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "lazygit",
+      "Version": "0.42.0",
+      "Updated": "2024-05-20T08:56:58.8760807+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "lua-for-windows",
+      "Version": "5.1.5-52",
+      "Updated": "2024-06-11T12:01:54.1763227+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "macchina",
+      "Version": "6.1.8",
+      "Updated": "2024-05-01T08:43:08.2570504+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "mingw",
+      "Version": "13.2.0-rt_v11-rev1",
+      "Updated": "2024-03-04T15:00:18.7776023+01:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "neovim",
+      "Version": "0.10.0",
+      "Updated": "2024-05-20T08:53:44.4413115+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "netcoredbg",
+      "Version": "3.1.0-1031",
+      "Updated": "2024-06-07T11:31:00.371425+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "nuget",
+      "Version": "6.10.0",
+      "Updated": "2024-05-23T13:09:40.6545545+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "nvm",
+      "Version": "1.1.12",
+      "Updated": "2024-06-10T07:37:31.0872277+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "poppler",
+      "Version": "24.02.0-0",
+      "Updated": "2024-06-22T23:59:25.063621+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "powertoys",
+      "Version": "0.81.1",
+      "Updated": "2024-06-10T07:37:34.4376537+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "python",
+      "Version": "3.12.4",
+      "Updated": "2024-06-10T07:40:03.1576319+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "ripgrep",
+      "Version": "14.1.0",
+      "Updated": "2024-06-22T23:59:26.6990313+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "spicetify-cli",
+      "Version": "2.36.13",
+      "Updated": "2024-06-19T09:31:03.4485158+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "spotify",
+      "Version": "1.2.39.578.g0ea3f38b",
+      "Updated": "2024-06-10T07:37:29.2220374+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "spotify-player",
+      "Version": "0.18.2",
+      "Updated": "2024-06-05T09:45:11.4005541+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "spotify-tui",
+      "Version": "0.25.0",
+      "Updated": "2024-05-17T13:35:57.2006537+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "tidy",
+      "Version": "5.8.0",
+      "Updated": "2024-06-11T12:02:27.6430093+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "tlock",
+      "Version": "1.0.0",
+      "Updated": "2024-05-13T09:29:45.0802257+02:00",
+      "Info": "",
+      "Source": "tlock"
+    },
+    {
+      "Name": "unar",
+      "Version": "1.8.1",
+      "Updated": "2024-06-22T23:59:29.3826425+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "upscayl",
+      "Version": "2.11.5",
+      "Updated": "2024-06-05T09:45:41.8605394+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "wezterm",
+      "Version": "20240203-110809-5046fc22",
+      "Updated": "2024-06-10T07:37:26.6373244+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "whkd",
+      "Version": "0.2.1",
+      "Updated": "2024-05-13T08:42:27.0052071+02:00",
+      "Info": "",
+      "Source": "extras"
+    },
+    {
+      "Name": "yazi",
+      "Version": "0.2.5",
+      "Updated": "2024-06-22T23:57:49.0241548+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "zig",
+      "Version": "0.13.0",
+      "Updated": "2024-06-10T07:39:24.359258+02:00",
+      "Info": "",
+      "Source": "main"
+    },
+    {
+      "Name": "zoxide",
+      "Version": "0.9.4",
+      "Updated": "2024-05-15T13:13:09.4246712+02:00",
+      "Info": "",
+      "Source": "main"
+    }
+  ],
+  "buckets": [
+    {
+      "Name": "main",
+      "Source": "https://github.com/ScoopInstaller/Main.git",
+      "Updated": "2024-06-22T22:25:00+02:00",
+      "Manifests": 1327
+    },
+    {
+      "Name": "extras",
+      "Source": "https://github.com/ScoopInstaller/Extras",
+      "Updated": "2024-06-22T22:27:47+02:00",
+      "Manifests": 2039
+    },
+    {
+      "Name": "scoop-bucket",
+      "Source": "https://github.com/Rigellute/scoop-bucket",
+      "Updated": "2021-01-06T13:30:27+01:00",
+      "Manifests": 0
+    },
+    {
+      "Name": "tlock",
+      "Source": "https://github.com/eklairs/tlock",
+      "Updated": "2024-05-23T03:57:33+02:00",
+      "Manifests": 0
+    }
+  ]
+}
