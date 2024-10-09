@@ -1,0 +1,9 @@
+# Rules are applied to the focused window when the focus changes.
+[[focused_window_rules]]
+command = "set translucent 245"
+match_process_name = ".*"
+
+# Rules are applied to the unfocused windows when the focus changes.
+[[unfocused_window_rules]]
+command = "set translucent 200"
+match_process_name = ".*"
