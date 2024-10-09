@@ -7,3 +7,6 @@
 [submodule "dots/.config/wezterm"]
 	path = dots/.config/wezterm
 	url = https://github.com/adriankarlen/wezterm.git
+[submodule "wallpapers"]
+	path = wallpapers
+	url = https://github.com/adriankarlen/wallpapers.git
