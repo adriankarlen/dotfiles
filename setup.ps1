@@ -60,6 +60,9 @@ if (!(Test-Path -Path $reposDir)) {
 # --------------------------- install applications --------------------------- #
 Write-Host "Installing applications..." -ForegroundColor "Green"
 Invoke-Expression ".\winget-package-install.ps1"
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 scoop install ".\scoop.json"
 
 # ---------------------------- setup applications ---------------------------- #
