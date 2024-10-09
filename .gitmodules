@@ -4,3 +4,6 @@
 [submodule "dots/zebar"]
 	path = dots/zebar
 	url = https://github.com/adriankarlen/zebar.git
+[submodule "dots/.config/wezterm"]
+	path = dots/.config/wezterm
+	url = https://github.com/adriankarlen/wezterm.git
