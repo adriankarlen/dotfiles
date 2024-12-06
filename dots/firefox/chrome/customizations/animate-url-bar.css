@@ -1,6 +1,0 @@
-#nav-bar,
-#titlebar,
-#navigator-toolbox:focus-within #nav-bar,
-#navigator-toolbox:focus-within #titlebar {
-    transition: margin 0.3s ease-in-out, margin-inline-start 0.3s ease-in-out;
-}

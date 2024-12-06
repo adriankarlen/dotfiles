@@ -1,7 +1,4 @@
 gui:
-  sidePanelWidth: 0.25
-  scrollHeight: 20
-  nerdFontsVersion: "3"
   authorColors:
     "*": magenta
   skipRewordInEditorWarning: true
@@ -9,8 +6,6 @@ gui:
     selectedLineBgColor:
       - black
   border: single
-git:
-  paging:
-    # Requires: https://github.com/Wilfred/difftastic
-    externalDiffCommand: difft --color=always --display=inline --syntax-highlight=on --tab-width=2
-notARepository: "skip"
+keybinding:
+  files:
+    viewResetOptions: <disabled>
