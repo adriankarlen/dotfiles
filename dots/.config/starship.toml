@@ -1,71 +1,115 @@
 format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$cmd_duration\
-$package\
-$nodejs\
-$lua\
-$rust\
-$zig\
-$line_break\
-$character"""
+$username \
+$directory \
+$git_branch \
+$git_status \
+$fill \
+$golang \
+$nodejs \
+$rust \
+$python \
+$dotnet \
+$time \
+$line_break  \
+[󱞪](fg:iris) """
+
+right_format = """$time"""
+palette = "rose-pine-moon"
+
+[palettes.rose-pine-moon]
+overlay = "#393552"
+love = "#eb6f92"
+gold = "#f6c177"
+rose = "#ea9a97"
+pine = "#3e8fb0"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
 
 [directory]
-style = "purple"
-read_only = " 󰌾"
+format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)"
+style = "bg:overlay fg:pine"
+truncation_length = 3
+truncation_symbol = "…/"
 
-[character]
-success_symbol = "[ ](yellow)"
-error_symbol = "[󰈸 ](red)"
-vimcmd_symbol = "[ ](green)"
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = ""
+Music = ""
+Pictures = ""
+nvim = ""
+
+[fill]
+style = "fg:overlay"
+symbol = " "
 
 [git_branch]
-format = "[$branch*]($style)"
-style = "bright-black"
-symbol = " "
+format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay)"
+style = "bg:overlay fg:foam"
+symbol = ""
 
 [git_status]
-format = "[[($conflicted$untracked$modified$staged$renamed$deleted)]($style) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-stashed = "≡"
+disabled = false
+style = "bg:overlay fg:love"
+format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
+up_to_date = '[ ✓ ](bg:overlay fg:iris)'
+untracked = '[?\($count\)](bg:overlay fg:gold)'
+stashed = '[\$](bg:overlay fg:iris)'
+modified = '[!\($count\)](bg:overlay fg:gold)'
+renamed = '[»\($count\)](bg:overlay fg:iris)'
+deleted = '[✘\($count\)](style)'
+staged = '[++\($count\)](bg:overlay fg:gold)'
+ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
+diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
+behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
 
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+[username]
+disabled = false
+format = "[](fg:overlay)[  $user ]($style)[](fg:overlay)"
+show_always = true
+style_root = "bg:overlay fg:iris"
+style_user = "bg:overlay fg:iris"
 
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
+[time]
+disabled = false
+format = "[](fg:overlay)[ $time  ]($style)[](fg:overlay)"
+style = "bg:overlay fg:rose"
+time_format = "%I:%M%P"
+use_12hr = false
+
+# Languages
+[bun]
+style = "bg:overlay fg:pine"
+format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+disabled = false
+symbol = " "
 
 [dotnet]
-format = "via [$symbol($version )(󰓾 $tfm )]($style) "
-
-[python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
-symbol = " "
-# End Pure Preset
-
-[hostname]
-ssh_symbol = " "
+style = "bg:overlay fg:pine"
+format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+disabled = false
+detect_extensions = ["csproj", "fsproj", "xproj", "sln"]
+symbol = " "
 
 [lua]
-symbol = " "
-style = "blue"
+style = "bg:overlay fg:pine"
+format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+disabled = false
+symbol = ""
 
 [nodejs]
-symbol = " "
-
-[package]
-symbol = "󰏗 "
-style = "bold cyan"
+style = "bg:overlay fg:pine"
+format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+disabled = false
+symbol = " "
 
 [rust]
-symbol = " "
+style = "bg:overlay fg:pine"
+format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+disabled = false
+symbol = ""
 
-[zig]
-symbol = " "
+[python]
+style = "bg:overlay fg:pine"
+format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
+disabled = false
+symbol = " "
