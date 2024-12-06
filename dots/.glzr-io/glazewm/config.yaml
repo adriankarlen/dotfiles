@@ -1,5 +1,5 @@
 general:
-  startup_commands: ["shell-exec zebar", "shell-exec glazewm-extra"]
+  startup_commands: ["shell-exec zebar", "shell-exec glazewm-extra", "shell-exec %userprofile%/documents/tacky-borders.exe"]
   focus_follows_cursor: false
   toggle_workspace_on_refocus: false
   cursor_jump:
@@ -17,18 +17,18 @@ gaps:
 window_effects:
   focused_window:
     border:
-      enabled: true
+      enabled: true 
       color: "#ea9a97"
-    corner_style:
-      enabled: true
-      style: "square"
+    # corner_style:
+    #   enabled: true
+      # style: "square"
   other_windows:
     border:
-      enabled: true
+      enabled: true 
       color: "#2a283e"
-    corner_style:
-      enabled: true
-      style: "square"
+    # corner_style:
+    #   enabled: true
+      # style: "square"
 
 window_behavior:
   initial_state: "tiling"
